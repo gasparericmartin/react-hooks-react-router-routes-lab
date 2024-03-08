@@ -1,21 +1,12 @@
 import React from "react";
 import { actors } from "../data";
+import RenderActors from './RenderActors'
 
 function Actors() {
   return (
     <div>
       <h1>Actors Page</h1>
-      {actors.map((actor) => {
-        return(
-          <div>
-            <p>{actor.name}</p>
-            <ul>
-              {actor.movies.map((movie) => <li>{movie}</li>)}
-            </ul>
-            
-          </div>
-        )
-      })}
+      {actors.map((actor) => <RenderActors key={actor.name} actor={actor} />)}
     </div>
   )
 }
